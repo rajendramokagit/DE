@@ -29,6 +29,7 @@ df_pyspark = df_pyspark.replace(
 
 # Remove Outlier -- We assume 59 to be maximum working age in the company
 df_pyspark = df_pyspark.filter('Age<60')
+df_pyspark = df_pyspark.filter('Age>18')
 
 # Remove Rows not containing First as well as Last Name
 df_pyspark = df_pyspark.filter(
