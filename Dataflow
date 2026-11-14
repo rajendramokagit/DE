@@ -1,0 +1,54 @@
+1. PySpark data cleaning flowchart
+Please find in a dataflow section.
+
+
+2. Data cleaning operations diagram
+Input: Employee CSV
+
+Employee_Table_1000_Rows.csv
+1,000 records
+
+
+Operation 1 – Handle NULL values
+Department
+
+NULL → Generalist
+
+Joining Year
+
+NULL → 2010
+
+
+Operation 2 – Standardize department
+Information Tech → IT
+
+
+Operation 3 – Filter age
+Age less than 60
+Keep
+
+Age greater than 18
+Keep
+
+Both conditions must be satisfied. Valid age: 19–59.
+
+
+Operation 4 – Validate employee names
+First Name IS NOT NULL OR Last Name IS NOT NULL
+Keep if at least one name exists
+Remove if both names are NULL
+
+
+Output: Cleaned DataFrame
+
+Ready for downstream processing
+
+
+3. PySpark operations reference
+Operation	PySpark syntax	Transformation
+Fill NULL	na.fill()	Missing values
+Replace values	replace()	Standardization
+Filter	filter()	Age validation
+Validate names	isNotNull()	Data completeness
+Display	show()	Data inspection
+Schema	printSchema()	Structure inspection
